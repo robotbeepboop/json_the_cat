@@ -6,7 +6,7 @@ const fetchBreedDescription = (breed, callback) => {
   let search = `https://api.thecatapi.com/v1/breeds/search?q=${breed}`;
   request(search, (error, response, body) => {
     /*
-    ***dont need these for now
+    ***dont need these
     console.log(typeof body);
     console.log(body);
     */

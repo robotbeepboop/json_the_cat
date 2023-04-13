@@ -1,7 +1,7 @@
 const request = require('request');
 // https://api.thecatapi.com/v1/breeds/search
 
-const breedFetcher = (breed, callback) => {
+const fetchBreedDescription = (breed, callback) => {
   //make search url variable so that its less messy code
   let search = `https://api.thecatapi.com/v1/breeds/search?q=${breed}`;
   request(search, (error, response, body) => {
@@ -25,7 +25,7 @@ const breedFetcher = (breed, callback) => {
       callback('Invalid breed');
     }
 
-    if (breedInfo) {
+    if (breedInfo) { //error will be null if successful
       callback(null, breedInfo.description);
     }
 
@@ -33,4 +33,4 @@ const breedFetcher = (breed, callback) => {
 
 };
 
-module.exports = {breedFetcher};
+module.exports = {fetchBreedDescription};

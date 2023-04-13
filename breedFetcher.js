@@ -21,7 +21,8 @@ const fetchBreedDescription = (breed, callback) => {
     const breedInfo = data[0];
     
     //if no description, its invalid
-    if (breedInfo.length === 0) { 
+    if (breedInfo.length === 0) {
+      //eslint registered the extra space as an error, fixed
       callback('Invalid breed');
     }
 
